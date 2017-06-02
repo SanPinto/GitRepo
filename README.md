@@ -1,2 +1,4 @@
 # GitRepo
-###3######3#########33#############3
+
+Sample to learn MVP architecture pattern.
+
