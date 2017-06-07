@@ -3,7 +3,7 @@ package com.bike.rent.bikerental.login.presenter;
 import android.content.Intent;
 
 import com.bike.rent.bikerental.login.LoginContract;
-import com.bike.rent.bikerental.login.interactor.LoginInteractorImpl;
+import com.bike.rent.bikerental.login.helper.FacebookHelper;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 
@@ -11,13 +11,11 @@ import com.facebook.login.LoginResult;
  * Created by sangeetha on 6/6/17.
  */
 
-public class LoginPresenterImpl implements LoginContract.LoginPresenter, LoginContract.RequiredPresenterOps {
+public class LoginPresenterImpl implements LoginContract.LoginPresenter, FacebookHelper.OnFaceBookSignedInListener {
     private LoginContract.LoginView mView;
-    private LoginInteractorImpl mInteractor;
 
     public LoginPresenterImpl() {
-        mInteractor = new LoginInteractorImpl(this);
-        mInteractor.initFbSdk();
+        FacebookHelper.getInstance().initFbSdk(this);
     }
 
     @Override
@@ -32,10 +30,9 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter, LoginCo
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (mInteractor != null) {
-            mInteractor.onActivityResult(requestCode, resultCode, data);
+            FacebookHelper.getInstance().onActivityResult(requestCode, resultCode, data);
         }
-    }
+
 
 
     @Override

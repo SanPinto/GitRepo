@@ -22,16 +22,6 @@ public class LoginContract {
 
     }
 
-    public interface RequiredPresenterOps {
-
-        void onLoginSuccess(LoginResult loginResult);
-
-        void onLoginCancelled();
-
-        void onLoginError(FacebookException error);
-
-
-    }
 
 
     public interface LoginView {
@@ -42,10 +32,4 @@ public class LoginContract {
         void onError(FacebookException error);
     }
 
-    public interface LoginInteractor {
-        void initFbSdk();
-
-        void onActivityResult(int requestCode, int resultCode, Intent data);
-
-    }
 }
