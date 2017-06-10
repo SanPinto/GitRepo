@@ -1,5 +1,7 @@
 package com.date.book.login;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 
 import com.facebook.FacebookException;
@@ -19,6 +21,12 @@ public class LoginContract {
 
         void onActivityResult(int requestCode, int resultCode, Intent data);
 
+        boolean isLoggedIn();
+
+        void login(Activity activity);
+
+        void logout();
+
 
     }
 
@@ -30,6 +38,8 @@ public class LoginContract {
         void onCancelled();
 
         void onError(FacebookException error);
+
+        void onLoggedOut();
     }
 
 }

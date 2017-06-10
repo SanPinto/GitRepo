@@ -3,6 +3,8 @@ package com.date.book.login.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.date.book.R;
@@ -10,12 +12,11 @@ import com.date.book.login.LoginContract;
 import com.date.book.login.presenter.LoginPresenterImpl;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.LoginView {
 
     private LoginPresenterImpl mPresenter;
-    private LoginButton mLoginButton;
+    private Button mLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
         mPresenter = new LoginPresenterImpl();
         mPresenter.attachView(this);
         initViews();
+        setLoginButton();
+        initClickListner();
     }
 
     @Override
@@ -35,12 +38,15 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     }
 
     private void initViews() {
-        mLoginButton = (LoginButton) findViewById(R.id.login_button);
+        mLoginButton = (Button) findViewById(R.id.login_button);
     }
 
     @Override
     public void onLoggedIn(LoginResult loginResult) {
         Toast.makeText(this, "You succefully Logged into Facebook", Toast.LENGTH_SHORT).show();
+        if (mLoginButton != null) {
+            mLoginButton.setText(getResources().getString(R.string.logout));
+        }
     }
 
     @Override
@@ -51,5 +57,41 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     @Override
     public void onError(FacebookException error) {
         Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onLoggedOut() {
+        if (mLoginButton != null) {
+            mLoginButton.setText(getResources().getString(R.string.login));
+        }
+    }
+
+    private void setLoginButton() {
+        if (mLoginButton != null && mPresenter != null) {
+            if (mPresenter.isLoggedIn()) {
+                mLoginButton.setText(getResources().getString(R.string.logout));
+            } else {
+                mLoginButton.setText(getResources().getString(R.string.login));
+            }
+        }
+    }
+
+    private void initClickListner() {
+        mLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handleClick();
+            }
+        });
+    }
+
+    private void handleClick() {
+        if (mPresenter != null) {
+            if (mPresenter.isLoggedIn()) {
+                mPresenter.logout();
+            } else {
+                mPresenter.login(this);
+            }
+        }
     }
 }

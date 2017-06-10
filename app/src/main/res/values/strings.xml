@@ -18,4 +18,6 @@
     <!--- Facebook -->
     <string name="facebook_app_id">319661061824069</string>
     <string name="fb_login_protocol_scheme">fb319661061824069</string>
+    <string name="login">LOGIN USING FACEBOOK</string>
+    <string name="logout">LOGOUT FROM FACEBOOK</string>
 </resources>

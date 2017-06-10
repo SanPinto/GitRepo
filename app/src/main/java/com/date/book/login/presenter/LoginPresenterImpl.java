@@ -1,5 +1,6 @@
 package com.date.book.login.presenter;
 
+import android.app.Activity;
 import android.content.Intent;
 
 import com.date.book.login.LoginContract;
@@ -33,6 +34,21 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter, Faceboo
         FacebookHelper.getInstance().onActivityResult(requestCode, resultCode, data);
     }
 
+    @Override
+    public boolean isLoggedIn() {
+        return FacebookHelper.getInstance().isLoggedIn();
+    }
+
+    @Override
+    public void login(Activity activity) {
+        FacebookHelper.getInstance().login(activity);
+    }
+
+    @Override
+    public void logout() {
+
+    }
+
 
     @Override
     public void onLoginSuccess(LoginResult loginResult) {
@@ -53,6 +69,13 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter, Faceboo
     public void onLoginError(FacebookException error) {
         if (mView != null) {
             mView.onError(error);
+        }
+    }
+
+    @Override
+    public void onSignedOut() {
+        if (mView != null) {
+            mView.onLoggedOut();
         }
     }
 }
