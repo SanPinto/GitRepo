@@ -1,9 +1,9 @@
-package com.bike.rent.bikerental.login.presenter;
+package com.date.book.login.presenter;
 
 import android.content.Intent;
 
-import com.bike.rent.bikerental.login.LoginContract;
-import com.bike.rent.bikerental.login.helper.FacebookHelper;
+import com.date.book.login.LoginContract;
+import com.date.book.login.helper.FacebookHelper;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 
@@ -30,9 +30,8 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter, Faceboo
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-            FacebookHelper.getInstance().onActivityResult(requestCode, resultCode, data);
-        }
-
+        FacebookHelper.getInstance().onActivityResult(requestCode, resultCode, data);
+    }
 
 
     @Override

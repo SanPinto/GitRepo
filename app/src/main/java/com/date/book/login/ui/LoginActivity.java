@@ -1,13 +1,13 @@
-package com.bike.rent.bikerental.login.ui;
+package com.date.book.login.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.bike.rent.bikerental.R;
-import com.bike.rent.bikerental.login.LoginContract;
-import com.bike.rent.bikerental.login.presenter.LoginPresenterImpl;
+import com.date.book.R;
+import com.date.book.login.LoginContract;
+import com.date.book.login.presenter.LoginPresenterImpl;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(mPresenter != null) {
+        if (mPresenter != null) {
             mPresenter.onActivityResult(requestCode, resultCode, data);
         }
     }
