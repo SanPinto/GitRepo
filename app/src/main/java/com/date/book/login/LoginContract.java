@@ -1,7 +1,6 @@
 package com.date.book.login;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 
 import com.facebook.FacebookException;
@@ -25,11 +24,12 @@ public class LoginContract {
 
         void login(Activity activity);
 
-        void logout();
+        void handleClick(Activity activity);
+
+        ;
 
 
     }
-
 
 
     public interface LoginView {
@@ -40,6 +40,8 @@ public class LoginContract {
         void onError(FacebookException error);
 
         void onLoggedOut();
+
+        void goToBookingScreen();
     }
 
 }

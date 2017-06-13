@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.date.book.R;
 import com.date.book.login.LoginContract;
+import com.date.book.login.booking.HomeActivity;
 import com.date.book.login.presenter.LoginPresenterImpl;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
@@ -45,8 +46,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     public void onLoggedIn(LoginResult loginResult) {
         Toast.makeText(this, "You succefully Logged into Facebook", Toast.LENGTH_SHORT).show();
         if (mLoginButton != null) {
-            mLoginButton.setText(getResources().getString(R.string.logout));
+            mLoginButton.setText(getResources().getString(R.string.login));
         }
+        goToBookingScreen();
     }
 
     @Override
@@ -64,6 +66,11 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
         if (mLoginButton != null) {
             mLoginButton.setText(getResources().getString(R.string.login));
         }
+    }
+
+    @Override
+    public void goToBookingScreen() {
+        Intent intent = new Intent(HomeActivity.class);
     }
 
     private void setLoginButton() {
@@ -87,11 +94,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
 
     private void handleClick() {
         if (mPresenter != null) {
-            if (mPresenter.isLoggedIn()) {
-                mPresenter.logout();
-            } else {
-                mPresenter.login(this);
-            }
+            mPresenter.handleClick(this);
         }
     }
+
 }

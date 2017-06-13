@@ -44,9 +44,18 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter, Faceboo
         FacebookHelper.getInstance().login(activity);
     }
 
-    @Override
-    public void logout() {
 
+    @Override
+    public void handleClick(Activity activity) {
+        if (isLoggedIn()) {
+//            logout();
+//            onSignedOut();
+            if(mView != null) {
+                mView.goToBookingScreen();
+            }
+        } else {
+            login(activity);
+        }
     }
 
 
@@ -78,4 +87,10 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter, Faceboo
             mView.onLoggedOut();
         }
     }
+
+    private void logout() {
+        FacebookHelper.getInstance().logout();
+    }
+
+
 }
