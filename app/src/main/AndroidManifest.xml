@@ -46,7 +46,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.booking.HomeActivity"
+            android:name=".login.event.EventActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

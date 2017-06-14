@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.date.book.R;
 import com.date.book.login.LoginContract;
-import com.date.book.login.booking.HomeActivity;
+import com.date.book.login.event.EventActivity;
 import com.date.book.login.presenter.LoginPresenterImpl;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
@@ -70,13 +70,15 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
 
     @Override
     public void goToBookingScreen() {
-        Intent intent = new Intent(HomeActivity.class);
+        Intent intent = new Intent(this, EventActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void setLoginButton() {
         if (mLoginButton != null && mPresenter != null) {
             if (mPresenter.isLoggedIn()) {
-                mLoginButton.setText(getResources().getString(R.string.logout));
+                mLoginButton.setText(getResources().getString(R.string.go_to_home));
             } else {
                 mLoginButton.setText(getResources().getString(R.string.login));
             }

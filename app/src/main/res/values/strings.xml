@@ -20,6 +20,7 @@
     <string name="fb_login_protocol_scheme">fb319661061824069</string>
     <string name="login">LOGIN USING FACEBOOK</string>
     <string name="logout">LOGOUT FROM FACEBOOK</string>
+    <string name="go_to_home">CLICK TO BOOK</string>
     <string name="title_activity_home">HomeActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
