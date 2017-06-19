@@ -9,10 +9,10 @@
         android:layout_height="150dp"
         android:background="@drawable/dinner_date" />
 
-    <AutoCompleteTextView
-        android:id="@+id/occasion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ocassion"/>
+   <Spinner
+       android:id="@+id/occasion_spinner"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:prompt="@string/occasion"></Spinner>
 
 </LinearLayout>

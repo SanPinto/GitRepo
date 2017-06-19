@@ -53,7 +53,7 @@ public class EventActivity extends AppCompatActivity implements EventContract.Ev
 
 
     private void addContentFrgament() {
-        mPresenter.addContentFragment(this, new EventFragment(), R.id.container);
+        mPresenter.addContentFragment(this, EventFragment.getInstance(mPresenter), R.id.container);
     }
 
 }
