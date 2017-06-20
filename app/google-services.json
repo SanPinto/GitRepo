@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "768624189443",
+    "firebase_url": "https://eventmaker-13dfe.firebaseio.com",
+    "project_id": "eventmaker-13dfe",
+    "storage_bucket": "eventmaker-13dfe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768624189443:android:fdf88366610e624f",
+        "android_client_info": {
+          "package_name": "com.maker.event"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768624189443-adisto3afncadp38hhmkjfq9drdsgh4s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maker.event",
+            "certificate_hash": "4b0ec508cb2cdf18adc26c760f81537559e58d01"
+          }
+        },
+        {
+          "client_id": "768624189443-ml63lb4s5vah90ubkbe9a3jjmge5ftu7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjN7r4svNL5fOvbDNxlCEsFntSWix13cU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768624189443-ml63lb4s5vah90ubkbe9a3jjmge5ftu7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

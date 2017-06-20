@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
     defaultConfig {
-        applicationId "com.date.book"
+        applicationId "com.maker.event"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
@@ -27,6 +27,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
-    compile 'com.android.support.constraint:constraint-layout:+'
     testCompile 'junit:junit:4.12'
+    //Firebase Authentification
+    compile 'com.google.firebase:firebase-auth:10.0.1'
 }
+
+apply plugin: 'com.google.gms.google-services'

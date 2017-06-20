@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BikeRental</string>
+    <string name="app_name">EventMaker</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -16,8 +16,8 @@
 
 
     <!--- Facebook -->
-    <string name="facebook_app_id">319661061824069</string>
-    <string name="fb_login_protocol_scheme">fb319661061824069</string>
+    <string name="facebook_app_id">1928816150666479</string>
+    <string name="fb_login_protocol_scheme">fb1928816150666479</string>
     <string name="login">LOGIN USING FACEBOOK</string>
     <string name="logout">LOGOUT FROM FACEBOOK</string>
     <string name="go_to_home">CLICK TO BOOK</string>
@@ -27,4 +27,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+
+    <!-- Event Screen -->
+    <string name="occasion">Occasion</string>
 </resources>
