@@ -7,9 +7,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.event.maker.R;
 import com.event.maker.login.event.presenter.EventPresenter;
 import com.event.maker.login.event.ui.EventFragment;
-import com.maker.event.R;
 
 public class EventActivity extends AppCompatActivity implements EventContract.EventView {
     private EventPresenter mPresenter;

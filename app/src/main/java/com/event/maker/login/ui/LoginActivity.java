@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.event.maker.R;
 import com.event.maker.login.LoginContract;
 import com.event.maker.login.event.EventActivity;
 import com.event.maker.login.presenter.LoginPresenterImpl;
 import com.google.firebase.auth.FirebaseUser;
-import com.maker.event.R;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.LoginView {
 
@@ -22,15 +22,16 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     @Override
     protected void onStart() {
         super.onStart();
-        mPresenter = new LoginPresenterImpl();
-        mPresenter.onStart();
+
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mPresenter = new LoginPresenterImpl();
         mPresenter.attachView(this);
+        mPresenter.onCreate();
         mPresenter.attachActivity(this);
         initViews();
         setLoginButton();
@@ -47,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     }
 
     private void initViews() {
-        mLoginButton = (Button) findViewById(R.id.login_button);
+        mLoginButton = (Button) findViewById(R.id.fb_login_button);
     }
 
     @Override

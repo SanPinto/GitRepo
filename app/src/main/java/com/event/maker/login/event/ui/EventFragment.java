@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Spinner;
 
 
+import com.event.maker.R;
 import com.event.maker.login.event.presenter.EventPresenter;
-import com.maker.event.R;
 
 /**
  * Created by sangeetha on 14/6/17.
