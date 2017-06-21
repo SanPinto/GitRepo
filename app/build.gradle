@@ -27,7 +27,15 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    //Unit Testing
     testCompile 'junit:junit:4.12'
+    // required if you want to use Mockito for unit tests
+    testCompile 'org.mockito:mockito-core:2.7.22'
+    //Power mock to mock Util classes
+    testCompile "org.powermock:powermock-module-junit4:1.6.4"
+    testCompile "org.powermock:powermock-module-junit4-rule:1.6.4"
+    testCompile "org.powermock:powermock-api-mockito:1.6.4"
+    testCompile "org.powermock:powermock-classloading-xstream:1.6.4"
     //Firebase Authentification
     compile 'com.google.firebase:firebase-auth:10.0.1'
 }

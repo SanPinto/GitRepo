@@ -3,10 +3,13 @@ package com.event.maker.login.presenter;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.text.TextUtils;
 import android.util.Log;
 
+import com.event.maker.R;
 import com.event.maker.login.LoginContract;
 import com.event.maker.login.helper.FacebookHelper;
+import com.event.maker.login.utils.ApplicationUtils;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -61,6 +64,20 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter, Faceboo
     }
 
     @Override
+    public void handleLogin() {
+        if (isLoggedIn()) {
+            if (mView != null) {
+                mView.goToBookingScreen();
+            }
+        } else {
+            if (mView != null) {
+                mView.initLoginScreen();
+            }
+        }
+
+    }
+
+    @Override
     public void login(Activity activity) {
         FacebookHelper.getInstance().login(activity);
     }
@@ -90,6 +107,20 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter, Faceboo
     @Override
     public void onStop() {
         mFirebaseAuth.removeAuthStateListener(this);
+    }
+
+    @Override
+    public void signUp() {
+     String username = mView.getUserName();
+    validateUserName(username);
+    }
+
+    private void validateUserName(String userName) {
+        if(TextUtils.isEmpty(userName)) {
+            mView.showUserNameError(R.string.username_empty);
+        } else if(!ApplicationUtils.isValidEmail(userName)) {
+            mView.showInvalidUserName(R.string.invalid_username);
+        }
     }
 
 

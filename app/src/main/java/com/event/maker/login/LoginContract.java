@@ -3,7 +3,6 @@ package com.event.maker.login;
 import android.app.Activity;
 import android.content.Intent;
 
-
 import com.google.firebase.auth.FirebaseUser;
 
 /**
@@ -24,6 +23,8 @@ public class LoginContract {
 
         boolean isLoggedIn();
 
+        void handleLogin();
+
         void login(Activity activity);
 
         void handleClick(Activity activity);
@@ -34,7 +35,7 @@ public class LoginContract {
 
         void onStop();
 
-
+        void signUp();
     }
 
 
@@ -48,6 +49,14 @@ public class LoginContract {
         void onLoggedOut();
 
         void goToBookingScreen();
+
+        void initLoginScreen();
+
+        String getUserName();
+
+        void showUserNameError(int resId);
+
+        void showInvalidUserName(int resId);
     }
 
 }
