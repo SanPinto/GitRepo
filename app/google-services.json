@@ -8,17 +8,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:768624189443:android:fdf88366610e624f",
+        "mobilesdk_app_id": "1:768624189443:android:89db64f677590b33",
         "android_client_info": {
-          "package_name": "com.maker.event"
+          "package_name": "com.event.maker"
         }
       },
       "oauth_client": [
         {
-          "client_id": "768624189443-adisto3afncadp38hhmkjfq9drdsgh4s.apps.googleusercontent.com",
+          "client_id": "768624189443-sa3b9uf3eeiee2bo02ntdqi7i359234h.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.maker.event",
+            "package_name": "com.event.maker",
+            "certificate_hash": "470d12910c687fabd86d2dfcaddce4920af09ed6"
+          }
+        },
+        {
+          "client_id": "768624189443-ggqarl7vfi949omoiten3qnlbpvtfnki.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.event.maker",
             "certificate_hash": "4b0ec508cb2cdf18adc26c760f81537559e58d01"
           }
         },
