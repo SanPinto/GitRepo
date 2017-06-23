@@ -3,13 +3,11 @@ package com.event.maker.login.presenter;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.text.TextUtils;
 import android.util.Log;
 
 import com.event.maker.R;
 import com.event.maker.login.LoginContract;
 import com.event.maker.login.helper.FacebookHelper;
-import com.event.maker.login.utils.ApplicationUtils;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -112,14 +110,54 @@ public class LoginPresenterImpl implements LoginContract.LoginPresenter, Faceboo
     @Override
     public void signUp() {
      String username = mView.getUserName();
-    validateUserName(username);
+        String password = mView.getPassWord();
+        if(isValidUserName(username)  && isValidPassWord(password)) {
+
+        }
     }
 
-    private void validateUserName(String userName) {
-        if(TextUtils.isEmpty(userName)) {
-            mView.showUserNameError(R.string.username_empty);
-        } else if(!ApplicationUtils.isValidEmail(userName)) {
-            mView.showInvalidUserName(R.string.invalid_username);
+    private boolean isValidPassWord(String password) {
+        if(isEmpty(password)) {
+            mView.showPaswordEmptyError(R.string.password_empty);
+            return false;
+        }
+        else if(!isValidPassword(password)) {
+            mView.showInvalidPasswordError(R.string.invalid_password);
+            return false;
+        }
+        return false;
+    }
+
+    private boolean isValidPassword(String password) {
+        return false;
+    }
+
+    private boolean isValidUserName(String userName) {
+        if(isEmpty(userName)) {
+            mView.showUserNameEmptyError(R.string.username_empty);
+            return false;
+        }
+        else if(!isValidEmail(userName)) {
+            mView.showInvalidUserNameError(R.string.invalid_username);
+            return false;
+        }
+        return false;
+    }
+
+    public boolean isEmpty(String str) {
+        if(str == null || str.length() == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public boolean isValidEmail(CharSequence email) {
+        if (email == null) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
         }
     }
 

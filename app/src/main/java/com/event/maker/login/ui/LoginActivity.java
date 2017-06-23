@@ -96,13 +96,28 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     }
 
     @Override
-    public void showUserNameError(int resId) {
+    public void showUserNameEmptyError(int resId) {
         mEmailEditText.setError(getString(resId));
     }
 
     @Override
-    public void showInvalidUserName(int resId) {
+    public void showInvalidUserNameError(int resId) {
         mEmailEditText.setError(getString(resId));
+    }
+
+    @Override
+    public String getPassWord() {
+        return mPasswordEditText.getText().toString();
+    }
+
+    @Override
+    public void showPaswordEmptyError(int resId) {
+        mPasswordEditText.setError(getString(resId));
+    }
+
+    @Override
+    public void showInvalidPasswordError(int resId) {
+        mPasswordEditText.setError(getString(resId));
     }
 
     private void setClickListeners() {

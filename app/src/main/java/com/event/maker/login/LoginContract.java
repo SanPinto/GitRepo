@@ -54,9 +54,15 @@ public class LoginContract {
 
         String getUserName();
 
-        void showUserNameError(int resId);
+        void showUserNameEmptyError(int resId);
 
-        void showInvalidUserName(int resId);
+        void showInvalidUserNameError(int resId);
+
+        String getPassWord();
+
+        void showPaswordEmptyError(int resId);
+
+        void showInvalidPasswordError(int resId);
     }
 
 }
