@@ -35,7 +35,7 @@ public class LoginContract {
 
         void onStop();
 
-        void signUp();
+        void signIn();
     }
 
 

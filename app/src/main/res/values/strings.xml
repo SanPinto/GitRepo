@@ -15,9 +15,9 @@
 
 
     <!--- Facebook -->
-    <string name="facebook_app_id">1928816150666479</string>
+    <string name="facebook_app_id">149675942255659</string>
     <string name="fb_login_protocol_scheme">fb1928816150666479</string>
-    <string name="login">LOGIN USING FACEBOOK</string>
+    <string name="fb_login">LOGIN USING FACEBOOK</string>
     <string name="logout">LOGOUT FROM FACEBOOK</string>
     <string name="go_to_home">CLICK TO BOOK</string>
     <string name="title_activity_home">HomeActivity</string>
@@ -31,12 +31,15 @@
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="action_sign_in_short">Register</string>
+    <string name="login">Login</string>
     <string name="btn_link_to_login">Already registered. Login Me!</string>
+    <string name="btn_link_to_register">New User. Click to Login</string>
     <string name="btn_forgot_password">Forgot your password?</string>
     <string name="username_empty">Username cannot be empty</string>
     <string name="invalid_username">Please enter a valid username</string>
     <string name="password_empty">Password cannot be empty</string>
-    <string name="invalid_password">Please enter a valid password</string>
+    <string name="invalid_password">The password must have atleast 6 characters long , must contain one digit, one uppercase ,one lowercase letter and a special character</string>
+    <string name="registration_failed">Registration Failed. Please check your credentials</string>
 
 
     <!-- Event Screen -->

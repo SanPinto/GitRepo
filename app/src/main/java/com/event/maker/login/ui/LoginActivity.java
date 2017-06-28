@@ -2,7 +2,7 @@ package com.event.maker.login.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +14,7 @@ import com.event.maker.login.event.EventActivity;
 import com.event.maker.login.presenter.LoginPresenterImpl;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity implements LoginContract.LoginView, View.OnClickListener {
+public class LoginActivity extends FragmentActivity implements LoginContract.LoginView, View.OnClickListener {
 
     private LoginPresenterImpl mPresenter;
     private Button mLoginButton;
@@ -138,7 +138,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     }
 
 
-    private void handleClick() {
+    private void loginUsingFB() {
         if (mPresenter != null) {
             mPresenter.handleClick(this);
         }
@@ -155,15 +155,23 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.sign_up_button:
-                mPresenter.signUp();
+                signUp();
                 break;
             case R.id.sign_in_button:
+                mPresenter.signIn();
                 break;
             case R.id.reset_password:
                 break;
             case R.id.fb_login_button:
+                loginUsingFB();
                 break;
         }
 
+    }
+
+    private void signUp() {
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
