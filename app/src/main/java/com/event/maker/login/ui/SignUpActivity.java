@@ -22,7 +22,6 @@ import com.event.maker.login.presenter.SignUpPresenterImpl;
 public class SignUpActivity extends FragmentActivity implements SignUpContract.SignUpView, View.OnClickListener {
 
     private SignUpPresenterImpl mPresenter;
-    private Button mLoginButton;
     private EditText mEmailEditText, mPasswordEditText;
     private Button mRegisterBtn, mSignInBtn;
     private ProgressBar mLoader;
@@ -105,7 +104,6 @@ public class SignUpActivity extends FragmentActivity implements SignUpContract.S
     }
 
     private void setClickListeners() {
-        mLoginButton.setOnClickListener(this);
         mRegisterBtn.setOnClickListener(this);
         mSignInBtn.setOnClickListener(this);
     }

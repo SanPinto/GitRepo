@@ -17,13 +17,20 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.event.maker.login.ui.LoginActivity"
-            android:label="@string/app_name">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".login.ui.SignUpActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

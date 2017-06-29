@@ -85,7 +85,7 @@ public class LoginPresenterImplTest {
     public void showShowErrorMsgWhenPasswordIsEmpty() throws Exception {
         when(mView.getUserName()).thenReturn("anisha@gmail.com");
         when(mView.getPassWord()).thenReturn("");
-        mPresenter.signUp();
+        mPresenter.signIn();
         verify(mView).showPaswordEmptyError(R.string.password_empty);
 
     }
@@ -93,7 +93,7 @@ public class LoginPresenterImplTest {
     @Test
     public void showInvalidPasswordMsgWhenPasswordIsInvalid() throws Exception {
         when(mView.getPassWord()).thenReturn("1234");
-        mPresenter.signUp();
+        mPresenter.signIn();
         verify(mView).showInvalidPasswordError(R.string.invalid_password);
 
     }
